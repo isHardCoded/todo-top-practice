@@ -8,9 +8,13 @@
 
 .todo__main {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
 }
 
-.todo__content {
+.todo__content,
+.completed__content {
 	display: flex;
 	flex-direction: column;
 	padding: 30px;
@@ -37,6 +41,23 @@
 	content: '';
 	position: absolute;
 	border: 3px #f21e1e solid;
+	border-radius: 50%;
+	width: 12px;
+	height: 12px;
+	top: 0px;
+	left: -28px;
+}
+
+.task__completed__title {
+	font-size: 16px;
+	font-weight: semi-bold;
+	position: relative;
+}
+
+.task__completed__title::before {
+	content: '';
+	position: absolute;
+	border: 3px #05a301 solid;
 	border-radius: 50%;
 	width: 12px;
 	height: 12px;
@@ -79,4 +100,35 @@
 
 .task__info .date__text span {
 	color: #a1a3ab;
+}
+
+.task__completed__info {
+	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.task__completed__info .status__text span {
+	color: #05a301;
+}
+
+.task__completed__info .date__text {
+	color: #747474;
+}
+
+.todo__title,
+.completed__title {
+	color: #ff6767;
+	font-size: 15px;
+}
+
+.todo__header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.todo__add__task {
+	font-size: 15px;
+	color: #a1a3ab;
+	cursor: pointer;
 }
